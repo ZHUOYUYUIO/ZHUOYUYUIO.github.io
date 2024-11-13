@@ -28,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/bg/blog1.png">
 <meta property="article:published_time" content="2024-11-12T01:33:54.000Z">
-<meta property="article:modified_time" content="2024-11-13T15:24:38.204Z">
+<meta property="article:modified_time" content="2024-11-13T15:33:05.819Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="ABM">
 <meta name="twitter:card" content="summary_large_image">
@@ -225,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          155 words
+          158 words
         
       </span>
     
@@ -289,32 +289,36 @@
 <p>“What are you planning to do after your shift?” can actually be seen as what the next step is, or simply “step”.</p>
 <p>The interaction between Natsumi, Miyuki, and the city constitutes the model among agents. We need to place them and the city into both spatial and temporal sequences.</p>
 <h2 id="1-introduction-of-mesa-geo-package"><a href="#1-introduction-of-mesa-geo-package" class="headerlink" title="1.introduction of mesa-geo package"></a>1.introduction of mesa-geo package</h2><ul>
-<li><p>with mesa-geo, we can build build a geosapce which can <strong>contain</strong> or support <strong>gis Agents</strong></p>
-</li>
-<li><p>Compared to traditional Agents, geoAgents have more <strong>geometry attributes</strong>: shapely, <strong>CRS</strong> coordinate system…</p>
-</li>
-<li><p>we can directly use shapely package to create a geometry object <strong>on our own</strong>.</p>
-</li>
-<li><p>we can also import existing geometric objects -&gt; vector data: shp, geojson, geodataframe.</p>
-</li>
+<li>with mesa-geo, we can build build a geosapce which can <strong>contain</strong> or support <strong>gis Agents</strong></li>
+<li>Compared to traditional Agents, geoAgents have more <strong>geometry attributes</strong>: shapely, <strong>CRS</strong> coordinate system…</li>
+</ul>
+<p>the geo_data mesa-geo use:</p>
+<ul>
+<li>we can directly use shapely package to create a geometry object <strong>on our own</strong>.</li>
+<li>we can also import existing geometric objects -&gt; vector data: shp, geojson, geodataframe.</li>
 </ul>
 <p>for example:</p>
 <ul>
 <li>Use the point function from the shapely package to generate corresponding coordinate points for the person agent.</li>
 <li>Directly import the regional data of any place.</li>
 </ul>
-<h2 id="2-the-geo-data-which-can-be-used-by-mesa-geo"><a href="#2-the-geo-data-which-can-be-used-by-mesa-geo" class="headerlink" title="2.the geo_data which can be used by mesa-geo"></a>2.the geo_data which can be used by mesa-geo</h2><h3 id="raster-data"><a href="#raster-data" class="headerlink" title="raster data"></a>raster data</h3><ul>
+<h2 id="2-the-existing-geometric-data-which-can-be-used-by-mesa-geo"><a href="#2-the-existing-geometric-data-which-can-be-used-by-mesa-geo" class="headerlink" title="2.the existing geometric data which can be used by mesa-geo"></a>2.the existing geometric data which can be used by mesa-geo</h2><h3 id="raster-data"><a href="#raster-data" class="headerlink" title="raster data"></a>raster data</h3><ul>
 <li>Divided into a grid and segmented into individual pixels, which ensures a uniform format and facilitates uniform operations.</li>
 <li>Detailed representation of various features, resulting in large data volumes.</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> rasterio  <br><span class="hljs-comment"># open the rasterio  </span><br>ds=rasterio.<span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;\...\...tif&#x27;</span>) <br>```  <br><span class="hljs-comment">### vector data</span><br>- Only stores geographic objects such <span class="hljs-keyword">as</span> points, point lists, <span class="hljs-keyword">and</span> related features, resulting <span class="hljs-keyword">in</span> smaller data volumes.<br>- Accurately represents point-line-plane elements.<br>- Facilitates modification <span class="hljs-keyword">and</span> editing.<br><br>```python<br><span class="hljs-keyword">import</span> geopandas <span class="hljs-keyword">as</span> gpd  <br>gdf = gpd.read_file(<span class="hljs-string">&#x27;\...\...\...shp&#x27;</span>) <br></code></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-comment"># read the geojson data</span><br>file_path = <span class="hljs-string">&#x27;\...geojson&#x27;</span><br>file_path = <span class="hljs-string">&quot;\...\....geojson&quot;</span><br>gdf_0 = gpd.read_file(file_path)<br><br><span class="hljs-comment"># draw the map</span><br>fig, ax = plt.subplots(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>))<br>gdf_0.plot(ax=ax, alpha=<span class="hljs-number">0.5</span>, edgecolor=<span class="hljs-string">&#x27;k&#x27;</span>)<br>ax.set_title(<span class="hljs-string">&#x27;regions&#x27;</span>)<br>ax.set_xlabel(<span class="hljs-string">&#x27;Longitude&#x27;</span>)<br>ax.set_ylabel(<span class="hljs-string">&#x27;Latitude&#x27;</span>)<br><br><span class="hljs-comment"># show the map</span><br>plt.show()<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> rasterio  <br><span class="hljs-comment"># open the rasterio  </span><br>ds=rasterio.<span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;\...\...tif&#x27;</span>) <br>```  <br><br><span class="hljs-comment">### vector data</span><br>- Only stores geographic objects such <span class="hljs-keyword">as</span> points, point lists, <span class="hljs-keyword">and</span> related features, resulting <span class="hljs-keyword">in</span> smaller data volumes.<br>- Accurately represents point-line-plane elements.<br>- Facilitates modification <span class="hljs-keyword">and</span> editing.<br><br>```python<br><span class="hljs-keyword">import</span> geopandas <span class="hljs-keyword">as</span> gpd  <br>gdf = gpd.read_file(<span class="hljs-string">&#x27;\...\...\...shp&#x27;</span>) <br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt<br><span class="hljs-comment"># read the geojson data</span><br>file_path = <span class="hljs-string">&#x27;\...geojson&#x27;</span><br>file_path = <span class="hljs-string">&quot;\...\....geojson&quot;</span><br>gdf_0 = gpd.read_file(file_path)<br><br><span class="hljs-comment"># draw the map</span><br>fig, ax = plt.subplots(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, figsize=(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>))<br>gdf_0.plot(ax=ax, alpha=<span class="hljs-number">0.5</span>, edgecolor=<span class="hljs-string">&#x27;k&#x27;</span>)<br>ax.set_title(<span class="hljs-string">&#x27;regions&#x27;</span>)<br>ax.set_xlabel(<span class="hljs-string">&#x27;Longitude&#x27;</span>)<br>ax.set_ylabel(<span class="hljs-string">&#x27;Latitude&#x27;</span>)<br><br><span class="hljs-comment"># show the map</span><br>plt.show()<br></code></pre></td></tr></table></figure>
 <h2 id="3-what-is-GeoAgent-how-to-use-the-geo-data"><a href="#3-what-is-GeoAgent-how-to-use-the-geo-data" class="headerlink" title="3.what is GeoAgent?&#x2F;how to use the geo_data?"></a>3.what is GeoAgent?&#x2F;how to use the geo_data?</h2><p>what can be done with these geo_data in mesa-geo?</p>
 <p>put the GeoAgents <strong>into the geospace</strong>! this geo_data are the location where agents are. </p>
 <p>however, before we put the GeoAgent into the geospace, let’s figure it out what is GeoAgent.</p>
 <h3 id="GeoAgent"><a href="#GeoAgent" class="headerlink" title="GeoAgent:"></a>GeoAgent:</h3><p>GeoAgent has different kinds of attributes: unique_id, model where the agents are put, geometry, crs</p>
 <p>GeoAgent <strong>can be</strong> buildings, people and others all you hope they have locations in your simulation process.</p>
-<h3 id="Allocate-a-location-geographic-object-to-every-GeoAgent"><a href="#Allocate-a-location-geographic-object-to-every-GeoAgent" class="headerlink" title="Allocate a location(geographic object) to every GeoAgent:"></a>Allocate a location(geographic object) to every GeoAgent:</h3><h2 id="there-are-several-ways"><a href="#there-are-several-ways" class="headerlink" title="there are several ways:"></a>there are several ways:</h2>
+<h3 id="Allocate-a-location-geographic-object-to-every-GeoAgent"><a href="#Allocate-a-location-geographic-object-to-every-GeoAgent" class="headerlink" title="Allocate a location(geographic object) to every GeoAgent:"></a>Allocate a location(geographic object) to every GeoAgent:</h3><p>there are several ways:</p>
+<ul>
+<li>using the geo_file we methioned</li>
+<li>using the geometry</li>
+</ul>
+
                 
               </div>
             
