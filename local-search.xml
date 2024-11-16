@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>how to write a abm report?</title>
+    <link href="/2024/11/16/ABM_report/"/>
+    <url>/2024/11/16/ABM_report/</url>
+    
+    <content type="html"><![CDATA[<h1 id="how-to-write-a-abmagent-based-modeling-report-如何撰写abm的报告"><a class="markdownIt-Anchor" href="#how-to-write-a-abmagent-based-modeling-report-如何撰写abm的报告"></a> how to write a ABM(agent based modeling) report? （如何撰写ABM的报告？）</h1><p>first let’s take a look at the parts of ABM report. Here, I’d like to share the OOD framwork to you:<br /><a href="https://www.jasss.org/23/2/7.html">https://www.jasss.org/23/2/7.html</a> Grimm, V. et al. (2020).</p><p><img src="/image/bg/abmreport_OOD.png" alt="" /><br />We shold know that there is no must for every abm creator to follow this framework. And sometimes it’s too complex for publishing. However, it’s a great way for us to organize our method part in our wirting.</p><ul><li>1.purpose</li><li>2.entities, state variables, and scales</li><li>3.Process overview and scheduling</li><li>4.design concept</li><li>5.initialization</li><li>6.visualization</li><li>7.input data</li><li>8.model outputs/simulation experiments</li><li>9.submodels(several specific fuction)</li></ul><h2 id="1purpose"><a class="markdownIt-Anchor" href="#1purpose"></a> 1.purpose</h2><p>what we should do in this part?</p><p>the aim of modeling.<br />a simple overview of our abm model</p><h2 id="2entities-state-variables-and-scales"><a class="markdownIt-Anchor" href="#2entities-state-variables-and-scales"></a> 2.entities, state variables, and scales</h2><ul><li>a simple introduction of our entities and what entities include, the space scale, the time scale.</li><li>then, describe all the agents: agents’ parametres: agents’ attributes(threshold, uid, find_range, activation weight) / variables: location(geometry), state, observe_num.</li><li>space entities</li><li>schedule</li><li>data collection and register</li></ul><h2 id="3process-overview-and-scheduling"><a class="markdownIt-Anchor" href="#3process-overview-and-scheduling"></a> 3.Process overview and scheduling</h2><p>just interpret how the schedule can be used.</p><h2 id="4design-concept"><a class="markdownIt-Anchor" href="#4design-concept"></a> 4.design concept</h2><ul><li>the objectives of agents（agent的目标是什么）e.g.go out of the maze.</li><li>sensing of agents (agent的感知) describe physical sensing and social network sensing.</li><li>interaction: the interaction among people, the interaction between person agent and physical environment.</li><li>Heterogeneity (异质性): describe the behavior difference in agent decision-making</li><li>Stochasticity: the random initialization and random behavior of agents.</li><li>observation: when data is collected?</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>study share</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ABM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>mesa-geo introduction(1)</title>
     <link href="/2024/11/12/war-abm-mesageo/"/>
     <url>/2024/11/12/war-abm-mesageo/</url>
