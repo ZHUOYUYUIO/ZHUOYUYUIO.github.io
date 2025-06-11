@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2025/06/11/update/"/>
+    <url>/2025/06/11/update/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>mesa-geo introduction(2)</title>
     <link href="/2024/12/15/mesa-geo-intro-(2)/"/>
     <url>/2024/12/15/mesa-geo-intro-(2)/</url>
@@ -161,6 +174,31 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2><h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
     
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>news about mine</title>
+    <link href="/2024/06/11/news/"/>
+    <url>/2024/06/11/news/</url>
+    
+    <content type="html"><![CDATA[<h1 id="the-news"><a class="markdownIt-Anchor" href="#the-news"></a> The news</h1><h2 id="1-lab-transfer"><a class="markdownIt-Anchor" href="#1-lab-transfer"></a> 1. Lab transfer</h2><p>from URAI lab to GeoGS lab</p><h2 id="2-tools-upgrade"><a class="markdownIt-Anchor" href="#2-tools-upgrade"></a> 2. Tools upgrade</h2><p>20 core cpu and 5060 GPU laptop is coming</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>news</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>news</tag>
+      
+    </tags>
     
   </entry>
   
